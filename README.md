@@ -1,2 +1,3 @@
-# ML_Algorithm_Matlab
-Matlab codes of Machine learning algorithms ( Both homework and project)
+# ML Algorithm Matlab Codes
+Matlab codes of Machine learning algorithms 
+## Least Square 
