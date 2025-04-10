@@ -1,4 +1,4 @@
-# 🧠 Machine Learning & Deep Learning Topics Overview
+# 🧠 Machine Learning Topics Overview
 
 ## Table of Contents
 1. [PAC Learning](#1-pac-learning)  
