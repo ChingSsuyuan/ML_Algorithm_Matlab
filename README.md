@@ -1,11 +1,5 @@
 # 🧠 Machine Learning Topics Overview
-    Evaluation
-         ▲
-        / \
-       /   \
-      /     \
-     /       \
-Validation Solution
+
 
 ## Table of Contents
 1. [PAC Learning](#1-pac-learning)  
