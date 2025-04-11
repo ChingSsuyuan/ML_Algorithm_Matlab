@@ -14,16 +14,8 @@ $$
 \min_{w,b} \sum_{i=1}^m (w^\top x_i + b - y_i)^2 + \lambda \|w\|_2^2 + \epsilon b^2
 $$
 
-Where:
-$$
-- \( x_i \in \mathbb{R}^d \): input features  
-- \( y_i \in \mathbb{R} \): output label  
-- \( w \in \mathbb{R}^d \): weight vector  
-- \( b \in \mathbb{R} \): bias term  
-- \( \lambda \geq 0 \): regularization on \( w \)  
-- \( \epsilon > 0 \): small constant to stabilize bias (usually set as `eps` in MATLAB)  
-$$
-This is a generalization of **Least Squares** (LS), where LS is equivalent to RLS with \( \lambda = 0 \), \( \epsilon = 0 \).
+
+This is a generalization of **Least Squares** (LS), where LS is equivalent to RLS with \( lambda = 0 \), \( epsilon = 0 \).
 
 ---
 
