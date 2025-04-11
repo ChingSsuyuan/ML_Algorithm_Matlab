@@ -8,9 +8,7 @@ This project implements the **Least Squares (LS)** algorithm and its generalizat
 
 We aim to solve the following optimization problem:
 
-\[
-\min_{w,b} \sum_{i=1}^m (w^\top x_i + b - y_i)^2 + \lambda \|w\|_2^2 + \epsilon b^2
-\]
+<b>minimize:</b> ∑(wᵗx<sub>i</sub> + b − y<sub>i</sub>)² + λ‖w‖² + εb²
 
 Where:
 - \( x_i \in \mathbb{R}^d \): input features
