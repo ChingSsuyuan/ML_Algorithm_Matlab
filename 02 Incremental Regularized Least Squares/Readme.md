@@ -59,3 +59,7 @@ This approach builds up the RLS solution step-by-step using:
 - Algebraic manipulation of the RLS solution
 - Matrix updates via Sherman-Morrison
 - A memory-efficient and computationally efficient framework
+
+## 📄 File: `verifyalgorithms.m`
+
+This file is designed to **numerically verify** that the solutions obtained from the standard **Regularized Least Squares (RLS)** algorithm (`train_rls.m`) and the **Incremental RLS** algorithm (`incremental_train_rls.m`) are equivalent.
