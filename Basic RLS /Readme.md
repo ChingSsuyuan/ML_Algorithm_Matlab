@@ -11,12 +11,12 @@ We aim to solve the following optimization problem:
 <b>minimize:</b> ∑(wᵗx<sub>i</sub> + b − y<sub>i</sub>)² + λ‖w‖² + εb²
 
 Where:
-- \( x_i \in \mathbb{R}^d \): input features
-- \( y_i \in \mathbb{R} \): target values
-- \( w \in \mathbb{R}^d \): weight vector
-- \( b \in \mathbb{R} \): bias term
-- \( \lambda \geq 0 \): regularization parameter (controls penalty on weights)
-- \( \epsilon > 0 \): tiny constant added to make the solution numerically stable (set as `eps` in MATLAB)
+- \( x<sub>i\): input features
+- \( y<sub>i \): target values
+- \( w \): weight vector
+- \( b \): bias term
+- \( lambda >= 0 \): regularization parameter (controls penalty on weights)
+- \( epsilon > 0 \): tiny constant added to make the solution numerically stable (set as `eps` in MATLAB)
 
 Note:
 - **Least Squares (LS)** is a special case of **RLS** with \( \lambda = 0 \) and \( \epsilon = 0 \).
