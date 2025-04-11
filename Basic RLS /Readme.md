@@ -11,8 +11,8 @@ We aim to solve the following optimization problem:
 <b>minimize:</b> ∑(wᵗx<sub>i</sub> + b − y<sub>i</sub>)² + λ‖w‖² + εb²
 
 Where:
-- \( x<sub>i \): input features
-- \( y<sub>i \): target values
+- \( x \): input features
+- \( y \): target values
 - \( w \): weight vector
 - \( b \): bias term
 - \( lambda >= 0 \): regularization parameter (controls penalty on weights)
