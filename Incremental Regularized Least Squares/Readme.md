@@ -38,7 +38,12 @@ To efficiently update the inverse of the covariance matrix:
 Let:
 $$
 C_n = X_n^\top X_n + \lambda I 
+
+$$
+
+$$
 C_{n+1} = C_n + x_{n+1} x_{n+1}^\top 
+
 $$
 We use the **Sherman-Morrison formula** to compute:
 
