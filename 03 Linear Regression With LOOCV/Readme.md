@@ -18,6 +18,8 @@ Where:
 - `b ∈ ℝ`: Bias term
 - `λ > 0`: Regularization parameter
 ## 🧠 Hint
+How to compute updated w(i):
+<img src="../Images/w_i_formula.jpg" alt="SGD图像" height="100"/>
 
 To efficiently compute the **Leave-One-Out Cross-Validation (LOOCV)** error without retraining the model `n` times, we use the **Sherman-Morrison formula**. This allows the inverse of the Gram matrix to be updated incrementally by removing the influence of a single data point.
 
