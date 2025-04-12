@@ -1,37 +1,33 @@
+#  Linear Regression with Root-Based Feature Expansion
 
-# Linear Regression with Root-Based Feature Expansion
+##  Problem Overview
 
-## 📌 Problem Summary
-
-This project implements **linear regression from ℝᵈ to ℝ**, with an enhanced feature space using **root-based basis functions**. The goal is to transform the original feature set by appending root-powered versions of each feature, and then learn a linear predictor in the expanded feature space.
-
----
-
-## 🧠 Feature Expansion
-
-For each original input feature \( x_i \), we construct additional features based on its roots:
+We implement a **linear regression** model that expands input features using fractional powers (roots). Instead of learning only on the original feature space \( x_1, x_2, \dots, x_d \), we extend it with fractional root features:
 
 \[
-(x_i^{1/2},\ x_i^{1/3},\ \dots,\ x_i^{1/k})
-\]
-
-These transformed features are **appended** to the original vector, resulting in a new feature vector of dimension:
-
-\[
-d_{\text{new}} = d \times (k - 1) + d = d \times k
-\]
-
----
-
-## 🎯 Model Form
-
-The predictor we are learning is a **linear regression model** in the transformed space. That is, we fit:
-
-\[
-\hat{y} = w^T \phi(x) + b
+\hat{y} = w_1 x_1 + \cdots + w_d x_d + w_{d+1} x_1^{1/2} + \cdots + w_{2d} x_d^{1/2} + \cdots + w_{dk} x_d^{1/k} + b
 \]
 
 Where:
-- \( \phi(x) \) is the root-expanded version of input \( x \)
-- \( w \in \mathbb{R}^{dk} \) is the learned weight vector
-- \( b \in \mathbb{R} \) is the bias term
+- \( d \): original feature dimension
+- \( k \): maximum root degree to apply (starting from square root, i.e., \( 1/2 \))
+- \( w \in \mathbb{R}^{dk} \), \( b \in \mathbb{R} \)
+
+---
+
+##  Feature Expansion
+
+To support this model, we expand the original data matrix \( X \in \mathbb{R}^{n \times d} \) to include:
+
+\[
+\phi(X) = \left[ X,\ X^{1/2},\ X^{1/3},\ \dots,\ X^{1/k} \right] \in \mathbb{R}^{n \times (d \cdot k)}
+\]
+
+Where each \( X^{1/r} \) means applying the root \( r \) element-wise.
+
+---
+
+##  Function Prototype
+
+```matlab
+[X_poly] = generate_poly_features(X, k)
