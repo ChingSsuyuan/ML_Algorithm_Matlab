@@ -7,9 +7,9 @@ This repository implements **Regularized Least Squares (RLS)** with **Leave-One-
 
 In RLS, we aim to minimize the regularized least squares loss:
 
-\[
+$$
 \min_{w, b} \|Xw + b - y\|^2 + \lambda \|w\|^2
-\]
+$$
 
 Where:
 - `X ∈ ℝ^{n×d}`: Input data with `n` samples and `d` features
