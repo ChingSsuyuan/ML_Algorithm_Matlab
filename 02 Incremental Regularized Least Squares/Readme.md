@@ -16,7 +16,7 @@ $$
 
 
 This is a generalization of **Least Squares** (LS), where LS is equivalent to RLS with \( lambda = 0 \), \( epsilon = 0 \).
-
+![Each update for w_i](Images/w_i_formula.png)
 ---
 
 ## 🚀 Incremental Algorithm Strategy
