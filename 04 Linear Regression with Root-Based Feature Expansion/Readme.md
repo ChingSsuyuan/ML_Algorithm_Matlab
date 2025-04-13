@@ -26,3 +26,22 @@ $$
 
 ```matlab
 [X_poly] = generate_poly_features(X, k)
+
+This project uses the **California Housing** dataset (`cadata_train_test.mat`), which includes a **random train/test split** of the UCI Housing dataset. The goal is to **predict the median house value** from normalized features (values scaled to the range [0, 1]).
+
+##  Files
+
+- `cadata_train_test.mat`  
+  Contains training and test sets from the normalized housing dataset.
+
+- `train_rls_loo.m`  
+  Trains a Regularized Least Squares (RLS) regressor and computes Leave-One-Out Cross-Validation (LOOCV) error.
+
+- `cadata_tester.m`  
+  Main script to:
+  - Generate root features (degree 1 to 10)
+  - Train RLS regressors
+  - Compute and plot:
+    - Training error
+    - Test error
+    - LOOCV error
