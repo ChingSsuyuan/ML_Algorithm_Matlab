@@ -21,4 +21,7 @@ function test_adult()
 
     figure;
     bar([mean(acc_last), mean(acc_avg)]);
+    set(gca, 'XTickLabel', {'Final Solution', 'Averaged Solution'});
+    ylabel('Accuracy');
+    title('Perceptron Performance on Adult Dataset');
 end
