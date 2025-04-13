@@ -18,4 +18,7 @@ function test_adult()
     fprintf('\nPerformance over %d runs:\n', num_runs);
     fprintf('Final solution average accuracy: %.4f ± %.4f\n', mean(acc_last), std(acc_last));
     fprintf('Averaged solution accuracy: %.4f ± %.4f\n', mean(acc_avg), std(acc_avg));
+
+    figure;
+    bar([mean(acc_last), mean(acc_avg)]);
 end
