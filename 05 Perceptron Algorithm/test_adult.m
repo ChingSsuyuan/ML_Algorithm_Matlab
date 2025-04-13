@@ -12,5 +12,7 @@ function test_adult()
         [w, b, average_w, average_b] = train_perceptron(X_train_shuffled, y_train_shuffled);
         y_pred_last = sign(X_test * w + b);
         acc_last(run) = mean(y_pred_last == y_test);
+        y_pred_avg = sign(X_test * average_w + average_b);
+        acc_avg(run) = mean(y_pred_avg == y_test);
     end
 end
