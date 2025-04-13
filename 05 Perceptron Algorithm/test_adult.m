@@ -15,4 +15,7 @@ function test_adult()
         y_pred_avg = sign(X_test * average_w + average_b);
         acc_avg(run) = mean(y_pred_avg == y_test);
     end
+    fprintf('\nPerformance over %d runs:\n', num_runs);
+    fprintf('Final solution average accuracy: %.4f ± %.4f\n', mean(acc_last), std(acc_last));
+    fprintf('Averaged solution accuracy: %.4f ± %.4f\n', mean(acc_avg), std(acc_avg));
 end
