@@ -17,10 +17,10 @@ function test_adult()
     end
     fprintf('\nPerformance over %d runs:\n', num_runs);
     fprintf('Final solution average accuracy: %.4f ± %.4f\n', mean(acc_last), std(acc_last));
-    fprintf('Averaged solution accuracy: %.4f ± %.4f\n', mean(acc_avg), std(acc_avg));
+    fprintf('Accuracy: %.4f ± %.4f\n', mean(acc_avg), std(acc_avg));
 
     figure;
-    bar([mean(acc_last), mean(acc_avg)]);
+    bar([mean(acc_last), mean(acc_avg)]);   
     set(gca, 'XTickLabel', {'Final Solution', 'Averaged Solution'});
     ylabel('Accuracy');
     title('Perceptron Performance on Adult Dataset');
