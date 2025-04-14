@@ -14,28 +14,31 @@ v2 = V(:, idx(2));
 z1 = X * v1;  
 z2 = X * v2;  
 
-function [CCR, best_t] = find_best_CCR(z, y)
-    [zs, idx] = sort(z);
-    ys = y(idx);
-    max_correct = 0;
-    best_t = 0;
-
-    for i = 1:length(zs)-1
-        t = (zs(i) + zs(i+1)) / 2;
-        y_pred = double(z > t) * 2 - 1;
-        correct = sum(y_pred == y);
-        if correct > max_correct
-            max_correct = correct;
-            best_t = t;
+function [best_CCR, best_threshold] = find_best_CCR(z, y)
+    z_sorted = sort(z);
+    thresholds = [];
+    for i = 1:(length(z_sorted)-1)
+        thresholds = [thresholds; (z_sorted(i) + z_sorted(i+1))/2];
+    end
+    thresholds = [z_sorted(1)-0.1; thresholds; z_sorted(end)+0.1];
+    best_CCR = 0;
+    best_threshold = 0;
+    
+    for i = 1:length(thresholds)
+        t = thresholds(i);
+        pred1 = 2*(z > t) - 1; 
+        CCR1 = sum(pred1 == y) / length(y);
+     
+        pred2 = 2*(z < t) - 1;
+        CCR2 = sum(pred2 == y) / length(y);
+        CCR = max(CCR1, CCR2);
+        
+        if CCR > best_CCR
+            best_CCR = CCR;
+            best_threshold = t;
         end
     end
-    y_pred_all_pos = ones(size(y));
-    y_pred_all_neg = -ones(size(y));
-    max_correct = max([max_correct, sum(y_pred_all_pos == y), sum(y_pred_all_neg == y)]);
-    
-    CCR = max_correct / length(y);
 end
-
 [CCR1, t1] = find_best_CCR(z1, y);
 fprintf('\nFirst Priciple Max CCR: %.2f threshold = %.4f\n', CCR1, t1);
 
