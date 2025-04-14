@@ -9,6 +9,6 @@ X_centered = X - mu;
 disp(X_centered')
 Sigma = (X_centered' * X_centered) / size(X, 1);  
 
-% 输出协方差矩阵
-disp('协方差矩阵 Σ 为：');
+
+disp('Matrix Σ 为：');
 disp(Sigma);
