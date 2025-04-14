@@ -10,6 +10,7 @@ disp(X_centered')
 Sigma = (X_centered' * X_centered) / size(X, 1);  
 
 [V, D] = eig(Sigma);
+v = [0; 1];
 phi = X_centered * v;
 proj_points = mu + phi * v'
 figure; hold on; axis equal;
