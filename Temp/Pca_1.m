@@ -10,7 +10,10 @@ disp(X_centered')
 Sigma = (X_centered' * X_centered) / size(X, 1);  
 
 [V, D] = eig(Sigma);
+phi = X_centered * v;
+proj_points = mu + phi * v'
 disp('Matrix Σ :');
 disp(Sigma);
 disp(diag(D));
 disp(V);
+disp(phi);
