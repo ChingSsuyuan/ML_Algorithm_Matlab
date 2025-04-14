@@ -10,5 +10,5 @@ disp(X_centered')
 Sigma = (X_centered' * X_centered) / size(X, 1);  
 
 
-disp('Matrix Σ 为：');
+disp('Matrix Σ :');
 disp(Sigma);
